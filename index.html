@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <script type="text/javascript">
+          function startTime() {
+                let today = new Date();
+                let h = addZero(today.getHours());
+                let m = addZero(today.getMinutes());
+                let s = addZero(today.getSeconds());
+                let ampm = h >= 12 ? 'pm' : 'am';
+                h = h % 12;
+                // the clock will display 12AM when the hour is 0
+               
+               
+                h = h ? h : 12; 
+                document.getElementById('txt').innerHTML = h + ":" + m + ":" + s + " " + ampm;
+                let t = setTimeout(startTime, 500);
+            }
+            
+            function addZero(i) {
+                if (i < 10) {
+                i = "0" + i;
+                }
+                return i;
+            } 
+        </script>
+         <link rel="stylesheet" href="background.css">
+    </head>
+    <body onload="startTime()">
+        <p> tick tick tick </p>
+        <div id="txt"></div>
+        <div class="flower">
+            <div class="ball" id="ball1"></div>
+            <div class="ball" id="ball2"></div>
+            <div class="ball" id="ball3"></div>
+            <div class="ball" id="ball4"></div>
+            <div class="ball" id="ball5"></div>
+            <div class="ball" id="ball6"></div>
+            <div class="ball" id="ball7"></div>
+            <div class="ball" id="ball8"></div>
+        </div>
+
+
+    </body>
+
+</html>
